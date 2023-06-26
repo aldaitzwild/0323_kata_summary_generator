@@ -415,3 +415,11 @@ $book = [
 		"page" => "289"
 	]
 ];
+
+usort($book, function ($a, $b){
+    return ($a['page'] < $b['page']) ? -1 : 1;
+});
+
+foreach($book as $chapter) {
+    echo str_pad($chapter['chapter'], 50, '.') . ' ' . $chapter['page'] . PHP_EOL;
+}
